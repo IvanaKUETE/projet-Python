@@ -2,7 +2,7 @@
 # README - Analyse de Données et Modélisation Machine Learning
 
 ## Description du projet
-Ce projet a pour objectif d’analyser les données relatives à la qualité de l'air et aux maladies respiratoires dans la région parisienne. Nous avons effectué une exploration approfondie des données, un prétraitement (incluant le nettoyage et l'encodage des variables), ainsi que la modélisation prédictive à l’aide de l'algorithme de Random Forest.
+Ce projet vise à répondre à la problématique suivante : peut-on prédire la prévalence des maladies respiratoires en fonction du département, de la classe d'âge, du sexe, du niveau prioritaire et des niveaux d'O₃ ? Pour cela, nous avons analysé les données relatives à la qualité de l'air et aux maladies respiratoires dans la région parisienne, en réalisant une exploration approfondie des données, un prétraitement (incluant le nettoyage et l'encodage des variables), ainsi des modélisations prédictives .
 
 ## Structure du projet
 Le projet est divisé en plusieurs étapes, présentées dans différents fichiers de notebook ou scripts Python.
@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 ## Données utilisées
 1. **Qualité de l'air** :
-   - Fichier : `indices_QA_commune_IDF_2017.csv`
+   - Fichier : `departement_means.csv`
    - Contient les indices de pollution (émissions de NO2, PM10, O3) par département en Ile-de-France.
 
 2. **Pathologies respiratoires** :
@@ -55,16 +55,21 @@ pip install -r requirements.txt
    - Contient les statistiques sur les maladies respiratoires par département, tranche d’âge et sexe.
 
 3. **Dataset final** :
-   - Fichier généré : `principal_data4.csv`
+   - Fichier généré : `principal_data.csv`
    - Fusion des données ci-dessus après nettoyage et transformation.
 
-## Modèle utilisé
-L’algorithme Random Forest Regressor a été utilisé pour prédire la variable cible `prev` (prévalence des maladies respiratoires).
+## Les Modèles utilisés
+Les algorithmes suivants ont été utilisés pour prédire la variable cible prev (prévalence des maladies respiratoires) :
+- `Random Forest`
+- `XGBoost`
+- `SVM (Support Vector Machine)`
 
 ### Paramètres du modèle
-- `n_estimators=100`
+- `n_estimators=300`
 - `max_depth=None`
-- `random_state=42`
+- `max_features': 'sqrt`
+- `min_samples_leaf': 1`
+- `min_samples_split': 2`
 
 
 
@@ -72,6 +77,7 @@ L’algorithme Random Forest Regressor a été utilisé pour prédire la variabl
 1. Clonez ce dépôt.
 2. Placez les fichiers de données dans le dossier `data/`.
 3. Exécutez les notebooks dans l’ordre suivant :
+   - `qualite_aire`
    - `analyse_exploratoire.ipynb`
    - `modélisation.ipynb`
    
@@ -81,4 +87,9 @@ L’algorithme Random Forest Regressor a été utilisé pour prédire la variabl
 
 
 ## Licence
-Ce projet est sous licence ****Open Database License (ODbL)**.
+Ce projet est sous licence **Open Database License (ODbL)**.
+
+## Auteur
+- `EL GHAOUTH MOHAMED MAHMOUD`
+- `TANGOUO KUETE Ivana`
+- `MAKAMWE Pierrette Josiane`
